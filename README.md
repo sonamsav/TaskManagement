@@ -1,3 +1,3 @@
-to run projext follow the steps given belwo
+to run project follow the steps given below
 npm install
 npm run dev 
