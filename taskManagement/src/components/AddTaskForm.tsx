@@ -110,12 +110,12 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
           id: uuid(),
           ...formData,
           time: new Date().toLocaleString(),
-          dueDate: formData.dueDate,  // ✅ Ensure dueDate is included
+          dueDate: formData.dueDate,  
         })
       );
       toast.success("Task added successfully");
     } else if (type === "update" && task) {
-      const updatedTask = { ...task, ...formData, dueDate: formData.dueDate };  // ✅ Ensure update includes dueDate
+      const updatedTask = { ...task, ...formData, dueDate: formData.dueDate }; 
   
       if (
         task.title !== formData.title ||
@@ -222,7 +222,7 @@ const AddTaskForm: React.FC<AddTaskFormProps> = ({
                   onChange={handleChange}
                 >
                   <option value="pending">Pending</option>
-                  <option value="complete">Completed</option>
+                  <option value="complete">complete</option>
                 </select>
               </label>
 

@@ -4,8 +4,8 @@ import HeaderButton from "./HeadorButton";
 import styles from "../styles/modules/app.module.scss";
 import AddTaskForm from "./AddTaskForm";
 import { updateFilterStatus } from "../slices/taskSlice";
-import { RootState } from "../store";
 import FilterButton from "./FilterBox";
+import { RootState } from "../redux/store";
 
 const Header: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   const dispatch = useDispatch();
 
   const updateFilter = (e: ChangeEvent<HTMLSelectElement>) => {
-    dispatch(updateFilterStatus(e.target.value as "all" | "pending" | "completed"));
+    dispatch(updateFilterStatus(e.target.value as "all" | "pending" | "complete"));
   };
 
   return (

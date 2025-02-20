@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import React, { useEffect, useState } from "react";
-import { MdDelete, MdEdit } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { deleteTask, updateTask } from "../slices/taskSlice";
 import { getClasses } from "../utils/getClasses";
@@ -64,7 +64,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, index }) => {
             <p
               className={getClasses([
                 styles.taskText,
-                task.status === "complete" ? styles["taskText--completed"] : "",
+                task.status === "complete" ? styles["taskText--complete"] : "",
               ])}
             >
               <span className={styles.title}> {task.title} </span>
@@ -73,7 +73,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, index }) => {
             <p
               className={getClasses([
                 styles.taskText,
-                task.status === "complete" ? styles["taskText--completed"] : "",
+                task.status === "complete" ? styles["taskText--complete"] : "",
               ])}
             >
               {task.description}

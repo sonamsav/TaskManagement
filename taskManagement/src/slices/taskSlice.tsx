@@ -1,21 +1,19 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getLocalStorageData, updateLocalStorage } from "../utils/localStorage";
 
-// Constants
+
 const TASK_LIST_KEY = "taskList";
 
-// Task Interface
 interface Task {
   id: string;
   title: string;
   description?: string;
-  status: "pending" | "completed";
-  dueDate?: string; // ✅ Ensure dueDate is included
+  status: "pending" | "complete";
+  dueDate?: string; 
 }
 
-// State Interface
 interface TaskState {
-  filterStatus: "all" | "pending" | "completed";
+  filterStatus: "all" | "pending" | "complete";
   taskList: Task[];
 }
 
@@ -23,9 +21,8 @@ const initialState: TaskState = {
   filterStatus: "all",
   taskList: (getLocalStorageData(TASK_LIST_KEY) as Task[]) || [],
 };
-console.log("Loaded tasks from localStorage:", initialState.taskList);
+// console.log("localSte:", initialState.taskList);
 
-// this is slice
 const taskSlice = createSlice({
   name: "task",
   initialState,
@@ -39,7 +36,7 @@ const taskSlice = createSlice({
       state.taskList = state.taskList.map((task) =>
         task.id === action.payload.id ? { ...task, ...action.payload } : task
       );
-      updateLocalStorage(TASK_LIST_KEY, state.taskList); // ✅ FIXED KEY
+      updateLocalStorage(TASK_LIST_KEY, state.taskList); 
     },
     deleteTask: (state, action: PayloadAction<string>) => {
       state.taskList = state.taskList.filter(
@@ -49,14 +46,13 @@ const taskSlice = createSlice({
     },
     updateFilterStatus: (
       state,
-      action: PayloadAction<"all" | "pending" | "completed">
+      action: PayloadAction<"all" | "pending" | "complete">
     ) => {
       state.filterStatus = action.payload;
     },
   },
 });
 
-// expoort actions and reducer
 export const { addTask, updateTask, deleteTask, updateFilterStatus } =
   taskSlice.actions;
 export default taskSlice.reducer;

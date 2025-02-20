@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import styles from "../styles/modules/app.module.scss";
 import TaskItem from "./TaskItem";
-import { Task } from "../types/task";
 
 const container = {
   hidden: { opacity: 1 },

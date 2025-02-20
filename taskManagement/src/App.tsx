@@ -17,7 +17,7 @@ const App: React.FC = () => {
           <TaskList />
         </div>
         <Toaster
-          position="top"
+          position="top-center" 
           toastOptions={{
             style: {
               fontSize: "1.4rem",
