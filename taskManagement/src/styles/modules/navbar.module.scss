@@ -1,0 +1,12 @@
+@import "../mixin.scss";
+
+.navbar {
+  display: flex;
+  padding: 20px;
+  background-color: var(--primarySeaGreen);
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Poppins";
+  text-align: center;
+}

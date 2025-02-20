@@ -1,0 +1,54 @@
+@import "../mixin.scss";
+
+.app__wrapper {
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+.appHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  @include smallDeviceSize {
+    // padding: 1.5rem;
+    margin: 5%;
+  }
+}
+.content__wrapper {
+  padding: 1rem 0.8rem;
+  border-radius: 2px;
+  margin-top: 1.5rem;
+  @include smallDeviceSize {
+    padding: 1.5rem;
+  }
+}
+.emptyText {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--black-2);
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: var(--gray-2);
+  width: max-content;
+  height: auto;
+}
+.statusSummary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pendingCount {
+  color: #e67e22; 
+  margin-right: 10px;
+}
+
+.completedCount {
+  color: #2ecc71; 
+}
+
