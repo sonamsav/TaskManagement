@@ -1,2 +1,4 @@
-I have used Reactjs with typescript for the assignment 
-i have done the task 
+
+to run projext follow the steps given belwo
+npm install
+npm run dev 
